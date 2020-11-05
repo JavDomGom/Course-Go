@@ -3,12 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	jd := []string{"Javier", "Domínguez", "Basket", "Patinaje", "Atletismo"}
-	fmt.Println(jd)
+	x := []int{1, 2, 3, 4, 5}
+	fmt.Println(x)
 
-	bg := []string{"Beatriz", "Giménez", "Rugby", "Polo", "Cricket"}
-	fmt.Println(bg)
-
-	vp := [][]string{jd, bg}
-	fmt.Println(vp)
+	y := append(x[:2], x[3:]...)
+	fmt.Println(x)
+	fmt.Println(y)
 }
