@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	xi := []int{2, 3, 4, 5, 6, 7, 8, 9}
 	x := sum("Hola", xi...)
-	print(x)
+	fmt.Println(x)
 }
 
 func sum(s string, x ...int) int {
