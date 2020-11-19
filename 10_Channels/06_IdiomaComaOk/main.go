@@ -37,10 +37,10 @@ func recibir(par, impar <-chan int, salir <-chan bool) {
 			fmt.Println("Desde el canal impar:", v)
 		case i, ok := <-salir:
 			if !ok {
-				fmt.Println("Desde comma ok:", i)
+				fmt.Println("Desde coma ok:", i)
 				return
 			} else {
-				fmt.Println("Desde comma ok:", i)
+				fmt.Println("Desde coma ok:", i)
 			}
 		}
 	}
