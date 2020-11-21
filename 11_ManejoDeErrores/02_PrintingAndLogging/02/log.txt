@@ -1,0 +1,1 @@
+2020/11/21 19:41:28 Ocurrió un error: open archivo_que_no_existe.txt: no such file or directory
