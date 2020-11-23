@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"../gato"
+	"github.com/JavierDominguezGomez/Course-Go/09_Paquetes/gato"
 )
 
 func main() {
