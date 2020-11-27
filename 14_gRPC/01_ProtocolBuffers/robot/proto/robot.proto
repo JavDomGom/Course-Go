@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package robot;
+
+message Robot {
+  reserved 5, 6;
+  reserved "laser", "agile";
+
+  string id = 1;
+  // Custom unique name.
+  string name = 2;
+  repeated string powers = 3; // laser, agile
+  // It's the robot's speed and it reflected by their attacks or powers.
+  // Deprecated and SHOULD use the attribute repeated powers.
+  int32 speed_level = 10 [deprecated = true];
+
+  Helper helper = 11;
+
+  // It's a robot helper who fights in hand to hand with its owner.
+  message Helper{
+    string id = 1;
+    string name = 2;
+  }
+}
+
+// It's the scenario where the fight will take place.
+enum SCENARIO {
+  CITY = 0;
+  SPACE = 1;
+  MALL = 2;
+}

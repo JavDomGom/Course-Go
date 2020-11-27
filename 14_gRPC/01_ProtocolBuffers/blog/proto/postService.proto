@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package post;
+
+import "proto/post.proto";
+
+option optimize_for = CODE_SIZE;
+option java_package = "com.blog.post";
+option java_outer_classname = "MyPost";
+
+message PostRequest {
+  post.Post post = 1;
+}
+
+message PostResponse {
+  post.Post post_title = 1;
+  post.Post post_body = 2;
+  post.Post post_author = 3;
+}
+
+service PostService {
+  rpc GetPost (PostRequest) returns (PostResponse);
+}
