@@ -6,7 +6,7 @@ import (
 	"log"
 	"net"
 
-	"../hellopb"
+	"github.com/JavierDominguezGomez/Course-Go/14_gRPC/02_MockupServidorCliente/hello/hellopb"
 	"google.golang.org/grpc"
 )
 
@@ -14,7 +14,7 @@ type server struct {
 }
 
 func (*server) Hello(ctx context.Context, req *hellopb.HelloRequest) (*hellopb.HelloResponse, error) {
-	fmt.Println("Hello function was called with %v\n", req)
+	fmt.Printf("Hello function was invoked with %v\n", req)
 
 	firstName := req.GetHello().GetFirstName()
 	prefix := req.GetHello().GetPrefix()
@@ -22,7 +22,7 @@ func (*server) Hello(ctx context.Context, req *hellopb.HelloRequest) (*hellopb.H
 	customHello := "Welcome " + prefix + " " + firstName + "."
 
 	res := &hellopb.HelloResponse{
-		CustomHello: customHello
+		CustomHello: customHello,
 	}
 	return res, nil
 }

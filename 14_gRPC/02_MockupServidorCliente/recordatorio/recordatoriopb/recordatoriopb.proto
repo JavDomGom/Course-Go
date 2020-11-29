@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package recordatorio;
+
+option go_package = "recordatorio/recordatoriopb";
+
+message Recordatorio {
+    int32 id = 1;
+    string mensaje = 2;
+    string fecha_limite = 3;
+    repeated string tags = 4;
+    string nombre = 5;
+    int32 prioridad = 6;
+}
+
+message RecordatorioRequest {
+    Recordatorio recordatorio = 1;
+}
+
+message RecordatorioResponse {
+    string custom_recordatorio = 1;
+}
+
+service RecordatorioService {
+    rpc Recordatorio (RecordatorioRequest) returns (RecordatorioResponse);
+}
